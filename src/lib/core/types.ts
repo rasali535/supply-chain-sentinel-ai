@@ -69,6 +69,6 @@ export interface LogEntry {
   workflowId: string;
   agent: string;
   action: string;
-  data?: any;
+  data?: unknown;
   timestamp: string;
 }

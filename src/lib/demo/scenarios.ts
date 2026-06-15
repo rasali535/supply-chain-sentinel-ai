@@ -4,10 +4,10 @@ export interface DemoScenario {
   description: string;
   signal: string;
   region: string;
-  expectedDisruption: any;
-  expectedAlternatives: any;
-  expectedTrust: any;
-  expectedStrategy: any;
+  expectedDisruption: unknown;
+  expectedAlternatives: unknown;
+  expectedTrust: unknown;
+  expectedStrategy: unknown;
 }
 
 export const demoScenarios: DemoScenario[] = [

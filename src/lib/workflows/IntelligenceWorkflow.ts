@@ -1,4 +1,4 @@
-import { Signal, MemoryContext } from "../core/types";
+import { Signal, MemoryContext, TrustScoreData } from "../core/types";
 import { memoryService } from "../services/MemoryService";
 import { historyService } from "../services/HistoryService";
 import { DisruptionAgent } from "../agents/DisruptionAgent";
@@ -40,7 +40,7 @@ export class IntelligenceWorkflow {
       historyService.logAction({ workflowId, agent: "SupplierAgent", action: "Alternatives Found", data: alternativesData });
 
       // 3. Trust Scoring & Ranking
-      const trustScoring: Record<string, any> = {};
+      const trustScoring: Record<string, TrustScoreData> = {};
       alternativesData.alternatives.forEach(supplier => {
         trustScoring[supplier.name] = TrustScoringEngine.evaluate(supplier);
       });

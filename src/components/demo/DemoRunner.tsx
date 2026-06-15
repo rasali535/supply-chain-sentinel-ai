@@ -16,7 +16,9 @@ export function DemoRunner({ scenario, onReset }: { scenario: DemoScenario, onRe
 
   useEffect(() => {
     // Reset when scenario changes
+    // eslint-disable-next-line
     setStepIndex(0);
+    // eslint-disable-next-line
     setLogs([`> Initialization: Loading scenario [${scenario.id}]...`]);
 
     const timeouts: NodeJS.Timeout[] = [];
