@@ -9,7 +9,8 @@ import {
   ActivitySquare, 
   Lightbulb, 
   GitMerge,
-  PlayCircle
+  PlayCircle,
+  Box
 } from "lucide-react";
 import { cn } from "../../lib/utils";
 
@@ -21,19 +22,19 @@ const routes = [
     color: "text-sky-500",
   },
   {
-    label: "Risk Monitor",
+    label: "Risk Monitor (Track 3)",
     icon: ShieldAlert,
     href: "/dashboard/risk",
-    color: "text-red-500",
+    color: "text-rose-500",
   },
   {
-    label: "Supplier Intelligence",
-    icon: Users,
+    label: "Supplier Intelligence (Track 1)",
+    icon: Box,
     href: "/dashboard/suppliers",
     color: "text-emerald-500",
   },
   {
-    label: "Agent Activity",
+    label: "Agent Activity (Audit Trail)",
     icon: ActivitySquare,
     href: "/dashboard/activity",
     color: "text-purple-500",

@@ -68,7 +68,7 @@ export default function Dashboard() {
               <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
                 SupplyChain Sentinel AI
               </h1>
-              <p className="text-sm text-slate-400">Autonomous Multi-Agent Intelligence</p>
+              <p className="text-sm text-slate-400">Enterprise Procurement & High-Stakes Risk Compliance</p>
             </div>
           </div>
           <div className="flex items-center gap-3">
@@ -120,7 +120,7 @@ export default function Dashboard() {
               <CardHeader className="pb-3 border-b border-slate-800/50">
                 <CardTitle className="flex items-center gap-2 text-lg font-medium text-slate-200">
                   <ShieldAlert className="w-5 h-5 text-rose-400" />
-                  Risk & Disruption Intelligence
+                  High-Stakes Compliance & Risk Investigation (Track 3)
                 </CardTitle>
               </CardHeader>
               <CardContent className="pt-6">
@@ -213,7 +213,7 @@ export default function Dashboard() {
               <CardHeader className="pb-3 border-b border-slate-800/50">
                 <CardTitle className="flex items-center gap-2 text-lg font-medium text-slate-200">
                   <Box className="w-5 h-5 text-orange-400" />
-                  Supplier Alternatives
+                  Procurement Approval Handoffs (Track 1)
                 </CardTitle>
               </CardHeader>
               <CardContent className="pt-4 px-2">

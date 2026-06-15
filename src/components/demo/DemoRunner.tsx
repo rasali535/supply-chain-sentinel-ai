@@ -46,7 +46,7 @@ export function DemoRunner({ scenario, onReset }: { scenario: DemoScenario, onRe
     schedule(18000, 4, `> [StrategyAgent] Formulating mitigation matrix...`);
     schedule(20000, 4, `> [StrategyAgent] Selected strategy: ${scenario.expectedStrategy.strategy}`);
     // Complete
-    schedule(23000, 5, `> [BandOrchestrator] Execution complete. Confidence: ${scenario.expectedStrategy.confidence_score}%.`);
+    schedule(23000, 5, `> [Compliance Engine] Strategy approved. Execution trace securely logged for internal audit. Confidence: ${scenario.expectedStrategy.confidence_score}%.`);
 
     return () => timeouts.forEach(clearTimeout);
   }, [scenario]);
@@ -78,7 +78,10 @@ export function DemoRunner({ scenario, onReset }: { scenario: DemoScenario, onRe
         <Card className="bg-[#0D1117] border-slate-800 font-mono text-sm shadow-2xl relative">
           <div className="flex items-center px-4 py-2 bg-[#161B22] border-b border-slate-800">
             <Terminal className="w-4 h-4 text-slate-500 mr-2" />
-            <span className="text-slate-400">sentinel-reasoning.log</span>
+            <span className="text-slate-400 mr-3">sentinel-reasoning.log</span>
+            <div className="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 uppercase tracking-wider">
+              Secure Audit Trail Enabled
+            </div>
             <div className="ml-auto flex space-x-2">
               <div className="w-3 h-3 rounded-full bg-slate-700" />
               <div className="w-3 h-3 rounded-full bg-slate-700" />

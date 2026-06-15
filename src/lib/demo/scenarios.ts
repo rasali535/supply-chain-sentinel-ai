@@ -13,8 +13,8 @@ export interface DemoScenario {
 export const demoScenarios: DemoScenario[] = [
   {
     id: "cement-botswana",
-    title: "Cement Shortage",
-    description: "Sudden regional deficit of construction materials.",
+    title: "Cross-Department Procurement Escalation",
+    description: "Sudden regional deficit triggers an automated procurement handoff and compliance review.",
     signal: "Critical cement shortage reported by regional distributors.",
     region: "Botswana",
     expectedDisruption: { disruption: "Supply Chain Halt", impact_level: "high", affected_sector: "Construction", severity_score: 9 },
@@ -24,8 +24,8 @@ export const demoScenarios: DemoScenario[] = [
   },
   {
     id: "fuel-disruption",
-    title: "Fuel Supply Disruption",
-    description: "Logistics fuel constraint impacting fleet operations.",
+    title: "Operational Logistics Coordination",
+    description: "Fuel constraint triggers cross-team operational workflow to reroute logistics.",
     signal: "Diesel refinery output drops by 40%.",
     region: "South Africa",
     expectedDisruption: { disruption: "Fuel Rationing", impact_level: "high", affected_sector: "Logistics", severity_score: 10 },
@@ -35,8 +35,8 @@ export const demoScenarios: DemoScenario[] = [
   },
   {
     id: "agri-shortage",
-    title: "Agricultural Input Shortage",
-    description: "Fertilizer delays affecting crop cycles.",
+    title: "Vendor Escalation & Approval",
+    description: "Fertilizer delays automatically escalate to alternative vendor approval workflow.",
     signal: "Port congestion delays fertilizer shipments by 3 weeks.",
     region: "Kenya",
     expectedDisruption: { disruption: "Planting Delay", impact_level: "medium", affected_sector: "Agriculture", severity_score: 7 },
@@ -46,8 +46,8 @@ export const demoScenarios: DemoScenario[] = [
   },
   {
     id: "cross-border-delay",
-    title: "Cross-Border Delay",
-    description: "Customs strike causing massive border queues.",
+    title: "High-Stakes Compliance Investigation",
+    description: "Customs strike triggers a risk/compliance investigation for cross-border trade.",
     signal: "Beitbridge border customs strike causing 5-day truck queues.",
     region: "Zimbabwe/SA Border",
     expectedDisruption: { disruption: "Transit Halt", impact_level: "high", affected_sector: "Cross-border Trade", severity_score: 8 },
