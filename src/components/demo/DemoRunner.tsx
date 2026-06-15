@@ -56,12 +56,12 @@ export function DemoRunner({ scenario, onReset }: { scenario: DemoScenario, onRe
 
   return (
     <div className="space-y-8 animate-in fade-in duration-700">
-      <div className="flex justify-between items-center">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
         <div>
           <h3 className="text-2xl font-bold text-white">Live Execution: <span className="text-indigo-400">{scenario.title}</span></h3>
           <p className="text-slate-400 mt-1">Multi-agent Band orchestration in progress.</p>
         </div>
-        <button onClick={onReset} className="px-4 py-2 text-sm bg-slate-800 hover:bg-slate-700 text-white rounded-md transition">
+        <button onClick={onReset} className="px-6 py-2 text-sm bg-slate-800 hover:bg-slate-700 text-white rounded-md transition whitespace-nowrap self-stretch md:self-auto text-center font-medium">
           Exit Demo
         </button>
       </div>

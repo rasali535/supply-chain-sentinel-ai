@@ -36,7 +36,7 @@ export default function DemoCenter() {
         {demoScenarios.map((scenario) => {
           const Icon = ICONS[scenario.id] || Globe;
           return (
-            <Card key={scenario.id} className="bg-slate-900 border-slate-800 hover:border-indigo-500/50 transition-all duration-300 group cursor-pointer overflow-hidden">
+            <Card key={scenario.id} onClick={() => setActiveScenario(scenario)} className="bg-slate-900 border-slate-800 hover:border-indigo-500/50 transition-all duration-300 group cursor-pointer overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
               <CardHeader>
                 <div className="flex items-center justify-between">
@@ -44,8 +44,7 @@ export default function DemoCenter() {
                     <Icon className="w-6 h-6" />
                   </div>
                   <button 
-                    onClick={() => setActiveScenario(scenario)}
-                    className="flex items-center space-x-2 bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2 rounded-full font-medium transition shadow-lg shadow-indigo-900/20 transform group-hover:scale-105"
+                    className="flex items-center space-x-2 bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2 rounded-full font-medium transition shadow-lg shadow-indigo-900/20 transform group-hover:scale-105 pointer-events-none"
                   >
                     <PlayCircle className="w-4 h-4" />
                     <span>Run Scenario</span>
