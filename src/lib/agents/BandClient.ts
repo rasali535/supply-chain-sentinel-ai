@@ -2,12 +2,12 @@ import OpenAI from "openai";
 
 export const featherlessClient = new OpenAI({
   baseURL: "https://api.featherless.ai/v1",
-  apiKey: process.env.FEATHERLESS_API_KEY,
+  apiKey: process.env.FEATHERLESS_API_KEY || "dummy_key_for_build",
 });
 
 export const aimlClient = new OpenAI({
   baseURL: "https://api.aimlapi.com/v1",
-  apiKey: process.env.AIML_API_KEY,
+  apiKey: process.env.AIML_API_KEY || "dummy_key_for_build",
 });
 
 export class BandOrchestrator {
