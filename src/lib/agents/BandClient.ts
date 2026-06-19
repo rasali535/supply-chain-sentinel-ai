@@ -13,8 +13,21 @@ export const aimlClient = new OpenAI({
 
 // Load Band credentials manually to bypass strict agent ID validation checks in the SDK
 export const getBandCredentials = (agentId: string) => {
+  let mappedAgentId = agentId;
+  if (agentId === "coordinator-agent" || agentId === "signal-monitoring-agent") {
+    mappedAgentId = process.env.BAND_SIGNAL_MONITORING_AGENT_ID || agentId;
+  } else if (agentId === "disruption-agent" || agentId === "disruption-detection-age") {
+    mappedAgentId = process.env.BAND_DISRUPTION_DETECTION_AGENT_ID || agentId;
+  } else if (agentId === "supplier-agent" || agentId === "alternative-supplier-age") {
+    mappedAgentId = process.env.BAND_ALTERNATIVE_SUPPLIER_AGENT_ID || agentId;
+  } else if (agentId === "risk-scoring-agent") {
+    mappedAgentId = process.env.BAND_RISK_SCORING_AGENT_ID || agentId;
+  } else if (agentId === "strategy-agent") {
+    mappedAgentId = process.env.BAND_STRATEGY_AGENT_ID || agentId;
+  }
+
   return {
-    agentId,
+    agentId: mappedAgentId,
     apiKey: process.env.BAND_API_KEY || "",
     wsUrl: process.env.BAND_WS_URL || undefined,
     restUrl: process.env.BAND_REST_URL || undefined,

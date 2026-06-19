@@ -51,6 +51,10 @@ async function main() {
   const disruptionAgent = Agent.create({
     adapter: disruptionAdapter,
     ...getBandCredentials("disruption-agent"),
+    identity: {
+      name: "Disruption Detection Agent",
+      description: "Identify risks, classify disruptions, and assess severity."
+    }
   });
 
   // 2. Alternative Supplier Agent
@@ -104,6 +108,10 @@ async function main() {
   const supplierAgent = Agent.create({
     adapter: supplierAdapter,
     ...getBandCredentials("supplier-agent"),
+    identity: {
+      name: "Alternative Supplier Agent",
+      description: "Find alternative suppliers matching product type globally."
+    }
   });
 
   // 3. Strategy Agent
@@ -157,6 +165,10 @@ async function main() {
   const strategyAgent = Agent.create({
     adapter: strategyAdapter,
     ...getBandCredentials("strategy-agent"),
+    identity: {
+      name: "Strategy Agent",
+      description: "Generate final actionable recommendations and logistics routing."
+    }
   });
 
   // Start all agents concurrently

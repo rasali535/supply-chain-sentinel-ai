@@ -56,7 +56,11 @@ export class IntelligenceWorkflow {
       const chatId = chat.id;
 
       // Add agents as participants
-      const agentIds = ["disruption-agent", "supplier-agent", "strategy-agent"];
+      const agentIds = [
+        process.env.BAND_DISRUPTION_DETECTION_AGENT_ID || "disruption-agent",
+        process.env.BAND_ALTERNATIVE_SUPPLIER_AGENT_ID || "supplier-agent",
+        process.env.BAND_STRATEGY_AGENT_ID || "strategy-agent"
+      ];
       for (const agentId of agentIds) {
         try {
           await link.rest.addChatParticipant(chatId, { participantId: agentId, role: "member" });
