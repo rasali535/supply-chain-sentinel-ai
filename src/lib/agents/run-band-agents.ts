@@ -9,6 +9,7 @@ import { TrustScoringEngine } from "../engines/TrustScoringEngine";
 import { SupplierRankingEngine } from "../engines/SupplierRankingEngine";
 import { OpportunityDetectionEngine } from "../engines/OpportunityDetectionEngine";
 import { RecommendationConfidenceEngine } from "../engines/RecommendationConfidenceEngine";
+import { MemoryContext } from "../core/types";
 
 // Helper to parse specific prefix messages from room history safely
 const findMessageInHistory = (history: any, prefix: string) => {
@@ -130,13 +131,16 @@ async function main() {
         const signal = signalContent ? JSON.parse(signalContent) : null;
         const disruption = disruptionContent ? JSON.parse(disruptionContent) : null;
 
-        const context = {
+        const context: MemoryContext = {
           workflowId: roomId,
-          status: "in-progress" as const,
+          status: "running",
           signal,
           disruption,
           alternatives,
           trustScoring,
+          messages: [],
+          createdAt: new Date().toISOString(),
+          updatedAt: new Date().toISOString()
         };
 
         // Generate strategy
