@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "agents": "tsx src/lib/agents/run-band-agents.ts"
+    "agents": "npx tsx src/lib/agents/run-band-agents.ts"
   },
   "dependencies": {
     "@band-ai/sdk": "^0.1.6",

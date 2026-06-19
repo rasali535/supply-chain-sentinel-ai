@@ -11,12 +11,13 @@ export const aimlClient = new OpenAI({
   apiKey: process.env.AIML_API_KEY || "dummy_key_for_build",
 });
 
-// Load Band credentials using the BAND_ prefix from environment variables
+// Load Band credentials manually to bypass strict agent ID validation checks in the SDK
 export const getBandCredentials = (agentId: string) => {
-  const credentials = loadAgentConfigFromEnv({ prefix: "BAND_" });
   return {
-    ...credentials,
     agentId,
+    apiKey: process.env.BAND_API_KEY || "",
+    wsUrl: process.env.BAND_WS_URL || undefined,
+    restUrl: process.env.BAND_REST_URL || undefined,
   };
 };
 
