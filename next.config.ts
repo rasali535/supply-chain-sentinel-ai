@@ -9,7 +9,8 @@ const nextConfig: NextConfig = {
   },
   typescript: {
     ignoreBuildErrors: true,
-  }
+  },
+  serverExternalPackages: ["@band-ai/sdk"]
 };
 
 export default nextConfig;

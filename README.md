@@ -25,12 +25,12 @@ The application features a dedicated **Live Demo Center** designed specifically 
 3. **Vendor Escalation & Approval** (Agricultural Input Shortage)
 4. **High-Stakes Compliance Investigation** (Cross-Border Delay)
 
-### Agent Pipeline (Band Workflow)
-1. **Signal Monitoring Agent**: Ingests raw data and demand spikes globally.
-2. **Disruption Detection Agent**: Identifies risk, assesses severity, and flags affected industries.
-3. **Alternative Supplier Agent**: Sources and matches alternative suppliers by region.
-4. **AI/ML Risk Scoring Agent**: Evaluates supplier trust, compliance, and risk levels.
-5. **Strategy Agent (Featherless AI)**: Formulates a final actionable logistics recommendation.
+### Agent Pipeline (Band SDK Collaboration)
+Our multi-agent system runs natively on the Band platform, coordinating task handoffs and state through a Band room message cascade:
+1. **Coordinator Agent**: Creates a dedicated Band chatroom, adds participants, and publishes the initial signal.
+2. **Disruption Detection Agent**: Listens for signals, assesses severity impact, and posts disruption metrics back to the room.
+3. **Alternative Supplier Agent**: Listens for disruptions, queries alternative suppliers, performs trust scoring/ranking, and posts findings.
+4. **Strategy Agent**: Listens for alternative suppliers, reasons over context using Featherless AI, and publishes the final strategy.
 
 ---
 
@@ -62,9 +62,14 @@ FEATHERLESS_API_KEY=your_featherless_api_key
 AIML_API_KEY=your_aiml_api_key
 ```
 
-3. Run the development server:
+3. Run the background Band agents runner:
+```bash
+npm run agents
+```
+
+4. Run the development server in a separate terminal:
 ```bash
 npm run dev
 ```
 
-The application will be available at `http://localhost:3006`. Navigate to `/dashboard/demo` to run the live hackathon pitch scenarios!
+The application will be available at `http://localhost:3006`. Navigate to `/dashboard/demo` to run the live hackathon pitch scenarios! If the background agents runner is active, the workflow will orchestrate live through Band chatrooms; otherwise, it will fall back to local simulation for reliability.
